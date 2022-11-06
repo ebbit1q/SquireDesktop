@@ -1,4 +1,4 @@
-name: "Main"
+name: "Build"
 
 on:
   push:
@@ -221,6 +221,10 @@ jobs:
         env:
           VCPKG_DEFAULT_TRIPLET: '${{matrix.vcpkg_default_triplet}}-windows'
           VCPKG_DISABLE_METRICS: 1
+
+            
+      - name: tmate
+        uses: mxschmitt/action-tmate@v3
 
       - name: Build Squire Desktop
         id: build
